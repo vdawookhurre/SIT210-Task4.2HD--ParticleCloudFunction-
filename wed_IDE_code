@@ -1,0 +1,45 @@
+int Red_Led = D6;
+int Yellow_Led = D5;
+int Green_Led = D4;
+
+int togglelight(String lightName)
+{
+    int light;
+    
+    if (lightName == "red") {
+    light = Red_Led;
+  } else if (lightName == "yellow") {
+    light = Yellow_Led;
+  } else if (lightName == "green") {
+    light = Green_Led;
+  } else {
+    return -1;
+  }
+  
+  int currentValue = digitalRead(light);
+  if (currentValue == HIGH) {
+    digitalWrite(light, LOW);
+  } else {
+    digitalWrite(light, HIGH);
+  }
+  
+  return 0;
+  
+}
+
+void setup() {
+  pinMode(Red_Led, OUTPUT);
+  pinMode(Yellow_Led, OUTPUT);
+  pinMode(Green_Led, OUTPUT);
+
+  digitalWrite(Red_Led, LOW);
+  digitalWrite(Yellow_Led, LOW);
+  digitalWrite(Green_Led, LOW);
+
+  Particle.function("togglelight", togglelight);
+
+}
+
+void loop() {
+
+}
