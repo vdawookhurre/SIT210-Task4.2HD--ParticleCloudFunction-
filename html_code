@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Traffic Light</title>
+</head>
+
+<body>
+	<h1>Traffic Light</h1>
+<center>
+<iframe name="blankiframe" style="display: none;"></iframe>
+
+<form action="https://api.particle.io/v1/devices/e00fce68e3e604e11acdb8c5/togglelight?access_token=6b3560c9a61afeaf752a67147213eb1bfb583f38" method="POST" target="blankiframe">
+	<input type="radio" name="color" value="red">Red
+	<br>
+	<input type="radio" name="color" value="yellow">Yellow
+	<br>
+	<input type="radio" name="color" value="green">Green
+	<br>
+	<input type="submit" value="Turn on/off LED">
+</form>
+</center>
+
+</body>
+</html>
